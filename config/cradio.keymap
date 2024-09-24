@@ -165,13 +165,13 @@
         game1_layer { // L_GAME1
             // -------------------------------------------------------------------
             // |  1  |   2  |   3  |    4  |  5  |   |  J  |  U   |  U  |  Y  |  '  |
-            // |  Q  |   W  |  UP  |    I  |  J  |   |  M  |  N   |  E  |  I  |  O  |
+            // |  W  |   R  |  UP  |    I  |  J  |   |  M  |  N   |  E  |  I  |  O  |
             // | ESC | LEFT | DOWN | RIGHT |  M  |   |  K  |  H   |  ,  |  .  |  /  |
             //                     | SPC   | TAB |   | ENT | BKSP |
 
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4      &kp NUMBER_5      &trans  &trans  &trans  &trans  &trans 
-&kp Q         &kp W           &kp UP_ARROW    &kp I             &kp J             &trans  &trans  &trans  &trans  &trans
+&kp W         &kp R           &kp UP_ARROW    &kp I             &kp J             &trans  &trans  &trans  &trans  &trans
 &kp ESCAPE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp M             &trans  &trans  &trans  &trans  &trans
                                               &trans            &trans            &trans  &trans
             >;
