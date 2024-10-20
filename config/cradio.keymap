@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 // layers
+
 #define L_DEFAULT 0
 #define L_SYM     1
 #define L_NUM     2
@@ -63,8 +64,8 @@
         };
 
         equal {
-          bindings = <&kp EQUAL>;
-          key-positions = <7 6>;
+            bindings = <&kp EQUAL>;
+            key-positions = <7 6>;
         };
 
         minus {
@@ -101,7 +102,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // L_DEFAULT
+        default_layer {
             // -------------------------------------------------------------------
             // |   Q  |  W  |  F  |  P  |  B  |   |  J  |  U   |  U  |  Y  |  '  |
             // |   A  |  R  |  T  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |
@@ -109,15 +110,14 @@
             //                    | SPC | TAB |   | ENT | BKSP |
 
             bindings = <
-&kp Q           &kp W           &kp F               &kp P             &kp B             &kp J             &kp L              &kp U        &kp Y            &kp SQT
-&mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G             &kp M             &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O
-&kp Z           &kp X           &kp C               &kp D             &kp V             &kp K             &kp H              &kp COMMA    &kp DOT          &kp FSLH
-                                                    &lt L_NAV SPACE   &lt L_NUM TAB     &lt L_SYM ENTER   &kp BACKSPACE
-
+&kp Q           &kp W           &kp F               &kp P             &kp B            &kp J            &kp L              &kp U        &kp Y            &kp SQT
+&mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G            &kp M            &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O
+&kp Z           &kp X           &kp C               &kp D             &kp V            &kp K            &kp H              &kp COMMA    &kp DOT          &kp FSLH
+                                                    &lt L_NAV SPACE   &lt L_NUM TAB    &lt L_SYM ENTER  &kp BACKSPACE
             >;
         };
 
-        symbols_layer { // L_SYM
+        symbols_layer {
             // ------------------------------------------------------
             // | & | ~ | % | `  | =  |   | BT0 |  F7  | F8 | F9 | F12 |
             // | ; | $ | # | *  | +  |   | BT1 |  F4  | F5 | F6 | F11 |
@@ -125,14 +125,14 @@
             //             | v+ | v- |   | ENT | BKSP |
 
             bindings = <
-&kp AMPERSAND  &kp TILDE   &kp PERCENT  &kp GRAVE        &kp EQUAL              &bt BT_SEL 0  &kp F7  &kp F8  &kp F9  &kp F12
-&kp SEMI       &kp DOLLAR  &kp HASH     &kp ASTERISK     &kp PLUS               &bt BT_SEL 1  &kp F4  &kp F5  &kp F6  &kp F11
-&kp CARET      &kp UNDER   &kp AT_SIGN  &kp PIPE         &kp BACKSLASH          &bt BT_SEL 2  &kp F1  &kp F2  &kp F3  &kp F10
-                                        &kp C_VOLUME_UP  &kp C_VOLUME_DOWN      &trans        &trans
+&kp AMPERSAND  &kp TILDE   &kp PERCENT  &kp GRAVE        &kp EQUAL            &bt BT_SEL 0  &kp F7      &kp F8  &kp F9  &kp F12
+&kp SEMI       &kp DOLLAR  &kp HASH     &kp ASTERISK     &kp PLUS             &bt BT_SEL 1  &kp F4      &kp F5  &kp F6  &kp F11
+&kp CARET      &kp UNDER   &kp AT_SIGN  &kp PIPE         &kp BACKSLASH        &bt BT_SEL 2  &kp F1      &kp F2  &kp F3  &kp F10
+                                        &kp C_VOLUME_UP  &kp C_VOLUME_DOWN    &trans        &bt BT_CLR
             >;
         };
 
-        num_layer { // L_NUM
+        num_layer {
             // ----------------------------------------------------
             // | Q | W | F |  P  |  B  |   | J |   7  | 8 | 9 | ' |
             // | A | R | T |  T  |  G  |   | M |   4  | 5 | 6 | O |
@@ -140,14 +140,14 @@
             //             | SPC | TAB |   | 0 | BKSP |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans      &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&trans  &trans  &trans  &trans  &trans      &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans
-&trans  &trans  &trans  &trans  &trans      &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-                        &trans  &trans      &kp N0  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+                        &trans  &trans    &kp N0  &trans
             >;
         };
 
-        nav_layer { // L_NAV
+        nav_layer {
             // ----------------------------------------------------
             // | Q | W | F |  P  |  B  |   |   J  | S-LEFT | S-DOWN | S-UP | S-RIGHT |
             // | A | R | T |  T  |  G  |   | CAPS |  LEFT  |  DOWN  |   UP |  RIGHT  |
@@ -155,14 +155,14 @@
             //             | SPC | TAB |   |  ENT |  BKSP  |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans      &trans      &kp LG(LEFT)    &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT)
-&trans  &trans  &trans  &trans  &trans      &caps_word  &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW      &kp RIGHT
-&trans  &trans  &trans  &trans  &trans      &kp INSERT  &kp HOME        &kp PAGE_DOWN       &kp PAGE_UP       &kp END
-                        &trans  &trans      &trans      &trans
+&trans  &trans  &trans  &trans  &trans    &trans      &kp LG(LEFT)    &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT)
+&trans  &trans  &trans  &trans  &trans    &caps_word  &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW      &kp RIGHT
+&trans  &trans  &trans  &trans  &trans    &kp INSERT  &kp HOME        &kp PAGE_DOWN       &kp PAGE_UP       &kp END
+                        &trans  &trans    &trans      &trans
             >;
         };
 
-        game1_layer { // L_GAME1
+        game1_layer {
             // -------------------------------------------------------------------
             // |  1  |   2  |   3  |    4  |  5  |   |  J  |  U   |  U  |  Y  |  '  |
             // |  W  |   R  |  UP  |    I  |  J  |   |  M  |  N   |  E  |  I  |  O  |
@@ -170,10 +170,10 @@
             //                     | SPC   | TAB |   | ENT | BKSP |
 
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4      &kp NUMBER_5      &trans  &trans  &trans  &trans  &trans 
-&kp W         &kp R           &kp UP_ARROW    &kp I             &kp J             &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp M             &trans  &trans  &trans  &trans  &trans
-                                              &trans            &trans            &trans  &trans
+&kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4     &kp NUMBER_5    &trans  &trans  &trans  &trans  &trans
+&kp W         &kp R           &kp UP_ARROW    &kp I            &kp J           &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp M           &trans  &trans  &trans  &trans  &trans
+                                              &trans           &trans          &trans  &trans
             >;
         };
     };
